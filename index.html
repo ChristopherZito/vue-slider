@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Album fotografico</title>
+</head>
+<body>
+    <!-- container -->
+    <div class="container" id="main-page">
+        <!-- item -->
+        <div class="item">
+            <div class="object active">
+                <img :src="slide[slidePos].items" :alt="slide[slidePos].title">
+                <div class="text">
+                    <h3>{{slide[slidePos].title}}</h3>
+                    <p>{{slide[slidePos].text}}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- thumbs -->
+        <div class="thumbs">
+            <button @click="bef" class="before"> 
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            
+            <div v-for="minimg, i in slide" class="sub-img" :class="i === slidePos ? `active` : `` " :key="i">
+                <img :src="minimg.items" :alt="minimg.title">
+            </div> 
+             
+            <button @click="nex" class="next">
+            <i class="fas fa-chevron-down"></i>
+            </button>    
+        </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script  src="js/script.js"></script>
+</body>
+</html>
