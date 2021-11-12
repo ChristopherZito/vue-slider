@@ -48,6 +48,9 @@ var inPage = new Vue (
                     this.slidePos++;
                 }
             }, 
+            fastMove(pos){
+                this.slidePos = pos;
+            }
         }
     }
 );

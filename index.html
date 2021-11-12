@@ -31,7 +31,7 @@
             </button>
             
             <div v-for="minimg, i in slide" class="sub-img" :class="i === slidePos ? `active` : `` " :key="i">
-                <img :src="minimg.items" :alt="minimg.title">
+                <img :src="minimg.items" :alt="minimg.title" @click="fastMove(i)">
             </div> 
              
             <button @click="nex" class="next">
